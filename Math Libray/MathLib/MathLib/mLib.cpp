@@ -113,6 +113,15 @@ float Vector3::DotProduct(Vector3& v)
 	return (x * v.x) + (y * v.y);
 }
 
+float Vector3::CrossProduct(Vector3& v)
+{
+	Vector3 cross = Vector3();
+	cross.x = (y * v.z) - (z * v.y);
+	cross.y = (z * v.x) - (x * v.z);
+	cross.z = (x * v.y) - (y * v.x);
+	return cross;
+}
+
 float Vector3::GetAngle(Vector3& v)
 {
 	float deltaX = v.x - x;
